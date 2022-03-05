@@ -48,7 +48,6 @@ namespace Budilnik
             this.label1.Size = new System.Drawing.Size(111, 29);
             this.label1.TabIndex = 0;
             this.label1.Text = "00:00:00";
-            
             // 
             // button1
             // 
@@ -58,6 +57,7 @@ namespace Budilnik
             this.button1.TabIndex = 1;
             this.button1.Text = "Завести будильник";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -67,6 +67,7 @@ namespace Budilnik
             this.button2.TabIndex = 2;
             this.button2.Text = "Остановить будильник";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // maskedTextBox1
             // 
@@ -80,6 +81,10 @@ namespace Budilnik
             // timer1
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // timer2
+            // 
+            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
             // 
             // label2
             // 

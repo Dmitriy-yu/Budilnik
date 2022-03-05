@@ -67,5 +67,50 @@ namespace Budilnik
             }
             label1.Text=time;
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (b==false)
+            {
+                label2.Text = maskedTextBox1.Text;
+                timer2.Start();
+                maskedTextBox1.Visible = false;
+                button1.Text = "Убрать будильник";
+                b =true;
+
+            }
+            else if (b==true)
+            {
+                label2.Text = "00:00";
+                timer2.Stop();
+                maskedTextBox1.Visible = true;
+                button1.Text = "Завеси будильник";
+                
+            }
+        }
+
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            if (label1.Text==label2.Text+":00")
+            {
+                button2.Enabled = true;
+                sp.Play();
+
+
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            sp.Stop();
+            button2.Enabled = false;
+            maskedTextBox1.Visible = true;
+            button1.Text = "Завести будильник";
+            b = false;
+
+
+
+
+        }
     }
 }
